@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport"
-		content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=3,user-scalable=no" />
+		content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no" />
 
 	<!-- Local. -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -30,15 +30,20 @@
 	<script src="https://raw.githubusercontent.com/bigcheekun/public/main/cdnjs/jquery.min.js"></script>
 	<script src="https://raw.githubusercontent.com/bigcheekun/public/main/cdnjs/psl.min.js"></script>
 	<style>
+		body {
+			padding: 10px;
+			word-break: break-all;
+		}
+
 		h1 {
 			display: block;
-			font-size: 20px;
+			font-size: 10px;
 		}
 
 		h3.domain {
 			display: block;
 			font-weight: 700;
-			padding: 20px;
+			padding: 10px;
 		}
 
 		.a_domain {
@@ -112,7 +117,7 @@
 
 			// Debug.
 			console.log({
-				_, psl, $,
+				_, psl, $
 			});
 
 			// Process.
@@ -156,7 +161,16 @@
 
 			let count_urls = 0;
 			let domain = '';
+			let count_debug = 0;
+			const i_debug = 71;
+			const f_debug = i_debug + 2;
 			for (const { rank, domain_psl, count_domain_psl, i_domain_psl, url } of Object.values(v)) {
+				// Debug.
+				if (0) {
+					count_debug++;
+					if (count_debug > i_debug && count_debug < f_debug); else continue;
+				}
+
 				// New domain.
 				if (domain !== domain_psl) {
 					o += `<h3 class='domain'>${domain_psl} (${count_domain_psl})</h3>`;
