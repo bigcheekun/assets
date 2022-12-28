@@ -3,21 +3,27 @@
 // 5.
 if (1) {
     // const url = 'https://www.amazon.com/dp/B09PLDMHVH';
-    const url = 'https://google.com';
-    fetch(url, {
-        mode: 'no-cors', // no-cors, *cors, same-origin
-        method: 'GET',
-        credentials: 'include',
-    }).then(response => {
-        console.log(response);
-        return 'Yee';
-    })
-        .then(result => {
-            console.log('Success:', result);
+    const url0 = 'https://gomakethings.com/about';
+    const url1 = 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue.cjs.js';
+
+    const f = url => {
+        fetch(url, {
+        // mode: 'no-cors', // no-cors, *cors, same-origin
+        // method: 'GET',
+        // credentials: 'include',
+        }).then(response => {
+            return response.text();
         })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+            .then(result => {
+                console.log('Success:', result);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    };
+
+    f(url0);
+    f(url1);
 }
 
 // 4.
