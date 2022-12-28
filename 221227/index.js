@@ -2,9 +2,22 @@
 
 // 5.
 if (1) {
-    fetch('https://www.amazon.com/dp/B09PLDMHVH')
-        .then((response) => response.json())
-        .then((data) => console.log(data));
+    // const url = 'https://www.amazon.com/dp/B09PLDMHVH';
+    const url = 'https://google.com';
+    fetch(url, {
+        mode: 'no-cors', // no-cors, *cors, same-origin
+        method: 'GET',
+        credentials: 'include',
+    }).then(response => {
+        console.log(response);
+        return 'Yee';
+    })
+        .then(result => {
+            console.log('Success:', result);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
 
 // 4.
