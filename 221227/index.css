@@ -1,0 +1,32 @@
+h1 {
+    color: gray;
+    font-weight: 700;
+    font-style: italic;
+}
+
+#id0 {
+    width: 100px;
+    height: 100px;
+    background: url('https://www.w3schools.com/cssref/paper.gif');
+}
+
+[cock="true"] {
+    text-decoration-line: line-through;
+}
+
+#d1 {
+    display: none;
+    position: fixed;
+    text-decoration-line: line-through;
+}
+
+#d1 div {
+    font-size: 1.4em;
+}
+
+#d1 div div {
+    position: relative;
+    text-decoration-line: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
